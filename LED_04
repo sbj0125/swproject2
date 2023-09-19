@@ -1,0 +1,27 @@
+// LED를 제어하기 위한 핀 번호 설정
+int ledPin = 7;
+
+void setup() {
+  // LED 핀을 출력으로 설정
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  // LED를 1초 동안 켜기
+  digitalWrite(ledPin, LOW);
+  delay(1000);
+
+  // LED를 1초 동안 끄고 5번 깜빡이기
+  for (int i = 0; i < 6; i++) {
+    digitalWrite(ledPin, LOW);
+    delay(200);
+    digitalWrite(ledPin, HIGH);
+    delay(200);
+  }
+
+  // LED 끄기
+  digitalWrite(ledPin, HIGH);
+  
+  // while 루프를 사용하여 무한루프 상태에서 종료
+  while (1) {}
+}
